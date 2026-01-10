@@ -6,6 +6,7 @@ on:
       - 'pdf/**'
       - 'generate_index.py'
       - 'index.html'
+      - '.github/workflows/update_index.yml'
 
 permissions:
   contents: write
