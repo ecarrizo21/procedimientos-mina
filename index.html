@@ -29,37 +29,125 @@
     ul {
       padding-left: 20px;
     }
+
+    /* ===== Portada ===== */
+
+    .portada {
+      background: transparent;
+      box-shadow: none;
+      text-align: center;
+    }
+
+    .titulo {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .menu-equipos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 800px) {
+      .menu-equipos {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .equipo {
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .equipo:hover {
+      transform: translateY(-4px);
+    }
+
+    .equipo img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .label {
+      font-size: 24px;
+      margin-bottom: 12px;
+      text-align: left;
+      padding-left: 10px;
+    }
+
   </style>
 </head>
 
 <body>
+
+  <!-- ===== PORTADA ===== -->
+  <div class="contenedor portada">
+    <h1 class="titulo">GUÍA DE AJUSTES – MANTENIMIENTO DE PERFORADORAS</h1>
+
+    <div class="menu-equipos">
+      <a href="#dr" class="equipo">
+        <div class="label">DR 560</div>
+        <img src="img/dr.jpg" alt="Perforadora DR 560">
+      </a>
+
+      <a href="#dpi" class="equipo">
+        <div class="label">DPi</div>
+        <img src="img/dpi.jpg" alt="Perforadora DPi">
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== LISTADOS ===== -->
   <div class="contenedor">
-    <h1>Guía de ajustes – Mantenimiento de Perforadoras</h1>
-    <p>Procedimientos técnicos de ajuste y mantenimiento para perforadoras.</p>
 
-    <h2>PDF disponibles</h2>
+    <h2 id="dr">DR 560</h2>
+    <p>(Procedimientos para flota DR)</p>
 
-    <!-- AUTO:START -->
-<ul>
-  <li>
-    <a href="pdf/Control%20de%20presiones%20en%20ventilador%20de%20motor%20y%20aceites%20Dpi.pdf" target="_blank" rel="noopener">Control de presiones en ventilador de motor y aceites Dpi (Abrir)</a> —
-    <a href="pdf/Control%20de%20presiones%20en%20ventilador%20de%20motor%20y%20aceites%20Dpi.pdf" download>Descargar</a>
-  </li>
-  <li>
-    <a href="pdf/Control%20y%20regulacion%20banco%20colectora%20de%20polvo.pdf" target="_blank" rel="noopener">Control y regulacion banco colectora de polvo (Abrir)</a> —
-    <a href="pdf/Control%20y%20regulacion%20banco%20colectora%20de%20polvo.pdf" download>Descargar</a>
-  </li>
-  <li>
-    <a href="pdf/DPi%205.x%20Recuperacion%20de%20Contadores.pdf" target="_blank" rel="noopener">DPi 5.x Recuperacion de Contadores (Abrir)</a> —
-    <a href="pdf/DPi%205.x%20Recuperacion%20de%20Contadores.pdf" download>Descargar</a>
-  </li>
-  <li>
-    <a href="pdf/Regulacion%20de%20bombas%20Dpi.pdf" target="_blank" rel="noopener">Regulacion de bombas Dpi (Abrir)</a> —
-    <a href="pdf/Regulacion%20de%20bombas%20Dpi.pdf" download>Descargar</a>
-  </li>
-</ul>
-<!-- AUTO:END -->
+    <!-- AUTO:START:DR -->
+    <ul>
+      <li><em>Sin documentos cargados aún.</em></li>
+    </ul>
+    <!-- AUTO:END:DR -->
+
+    <h2 id="dpi">DPi</h2>
+    <p>(Procedimientos para flota DPi)</p>
+
+    <!-- AUTO:START:DPI -->
+    <ul>
+      <li>
+        <a href="pdf/Control%20de%20presiones%20en%20ventilador%20de%20motor%20y%20aceites%20Dpi.pdf" target="_blank" rel="noopener">
+          Control de presiones en ventilador de motor y aceites Dpi (Abrir)
+        </a> —
+        <a href="pdf/Control%20de%20presiones%20en%20ventilador%20de%20motor%20y%20aceites%20Dpi.pdf" download>Descargar</a>
+      </li>
+      <li>
+        <a href="pdf/Control%20y%20regulacion%20banco%20colectora%20de%20polvo.pdf" target="_blank" rel="noopener">
+          Control y regulación banco colectora de polvo (Abrir)
+        </a> —
+        <a href="pdf/Control%20y%20regulacion%20banco%20colectora%20de%20polvo.pdf" download>Descargar</a>
+      </li>
+      <li>
+        <a href="pdf/DPi%205.x%20Recuperacion%20de%20Contadores.pdf" target="_blank" rel="noopener">
+          DPi 5.x Recuperación de Contadores (Abrir)
+        </a> —
+        <a href="pdf/DPi%205.x%20Recuperacion%20de%20Contadores.pdf" download>Descargar</a>
+      </li>
+      <li>
+        <a href="pdf/Regulacion%20de%20bombas%20Dpi.pdf" target="_blank" rel="noopener">
+          Regulación de bombas DPi (Abrir)
+        </a> —
+        <a href="pdf/Regulacion%20de%20bombas%20Dpi.pdf" download>Descargar</a>
+      </li>
+    </ul>
+    <!-- AUTO:END:DPI -->
 
   </div>
+
 </body>
 </html>
