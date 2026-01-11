@@ -3,10 +3,10 @@ name: Update index from PDFs
 on:
   push:
     paths:
-      - 'pdf/**'
-      - 'generate_index.py'
-      - 'dr/**'
       - 'dpi/**'
+      - 'dr/**'
+      - 'generate_index.py'
+      - '.github/workflows/update_index.yml'
 
 permissions:
   contents: write
