@@ -4,149 +4,73 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guía de ajustes – Mantenimiento de Perforadoras</title>
-
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, Arial, sans-serif;
+    body{
+      margin:0;
+      font-family:system-ui, Arial, sans-serif;
       background: linear-gradient(180deg, #1f1f1f 0%, #2b2b2b 100%);
-      color: #111;
     }
-
-    html {
-      scroll-behavior: smooth; /* scroll suave al tocar DR/DPi */
+    .portada{
+      max-width: 980px;
+      margin: 30px auto;
+      padding: 10px 18px 28px;
+      text-align:center;
     }
-
-    .contenedor {
-      background: rgba(255, 255, 255, 0.88);
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 24px 28px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    /* ===== Portada ===== */
-    .portada {
-      background: transparent;
-      box-shadow: none;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .titulo {
-      color: white;
+    .titulo{
+      color:#fff;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin: 16px 0 26px;
       font-size: 22px;
-      margin: 10px 0 30px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
-
-    .menu-equipos {
-      display: grid;
-      grid-template-columns: 1fr;
+    .menu{
+      display:grid;
+      grid-template-columns:1fr;
       gap: 40px;
-      justify-items: center;
+      justify-items:center;
     }
-
-    @media (min-width: 800px) {
-      .menu-equipos {
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
-      }
+    @media(min-width:800px){
+      .menu{ grid-template-columns:1fr 1fr; }
     }
-
-    .equipo {
-      text-decoration: none;
-      color: white;
-      transition: transform 0.2s ease;
-      width: 100%;
-      max-width: 460px;
+    .card{
+      display:block;
+      text-decoration:none;
+      color:#fff;
+      width:100%;
+      max-width:460px;
+      transition: transform .2s ease;
     }
-
-    .equipo:hover {
-      transform: translateY(-4px);
-    }
-
-    .equipo img {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-      display: block;
-    }
-
-    .label {
-      font-size: 24px;
+    .card:hover{ transform: translateY(-4px); }
+    .label{
+      font-size:24px;
       margin: 0 0 12px;
-      text-align: left;
-      padding-left: 10px;
+      text-align:left;
+      padding-left:10px;
       color: rgba(255,255,255,0.92);
     }
-
-    /* Separador para que al abrir SOLO se vea la portada */
-    .separador {
-      height: 90vh; /* ajustá 80vh / 100vh si querés más o menos distancia */
-    }
-
-    /* Para que al llegar al ancla quede bien posicionado */
-    #dr, #dpi {
-      scroll-margin-top: 30px;
+    img{
+      width:100%;
+      border-radius:14px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.45);
+      display:block;
     }
   </style>
 </head>
-
 <body>
-
-  <!-- ===== PORTADA (solo título + botones) ===== -->
-  <div class="contenedor portada">
+  <div class="portada">
     <h1 class="titulo">GUÍA DE AJUSTES – MANTENIMIENTO DE PERFORADORAS</h1>
 
-    <div class="menu-equipos">
-      <a href="#dr" class="equipo">
+    <div class="menu">
+      <a class="card" href="dr/">
         <div class="label">DR 560</div>
         <img src="img/dr.jpg" alt="Perforadora DR 560">
       </a>
 
-      <a href="#dpi" class="equipo">
+      <a class="card" href="dpi/">
         <div class="label">DPi</div>
         <img src="img/dpi.jpg" alt="Perforadora DPi">
       </a>
     </div>
   </div>
-
-  <!-- Espacio para que los procedimientos NO se vean en la pantalla inicial -->
-  <div class="separador"></div>
-
-  <!-- ===== LISTADOS ===== -->
-  <div class="contenedor">
-
-    <h2 id="dr">DR 560</h2>
-    <p>(Procedimientos para flota DR)</p>
-
-    <!-- AUTO:START:DR -->
-<ul>
-  <li><em>Sin documentos cargados aún.</em></li>
-</ul>
-<!-- AUTO:END:DR -->
-
-    <h2 id="dpi">DPi</h2>
-    <p>(Procedimientos para flota DPi)</p>
-
-    <!-- AUTO:START:DPI -->
-<ul>
-  <li><a href="pdf/DPi/Control%20de%20presiones%20en%20ventilador%20de%20motor%20y%20aceites%20Dpi.pdf" target="_blank" rel="noopener">Control de presiones en ventilador de motor y aceites Dpi (Abrir)</a> — <a href="pdf/DPi/Control%20de%20presiones%20en%20ventilador%20de%20motor%20y%20aceites%20Dpi.pdf" download>Descargar</a></li>
-  <li><a href="pdf/DPi/Control%20y%20regulacion%20banco%20colectora%20de%20polvo.pdf" target="_blank" rel="noopener">Control y regulacion banco colectora de polvo (Abrir)</a> — <a href="pdf/DPi/Control%20y%20regulacion%20banco%20colectora%20de%20polvo.pdf" download>Descargar</a></li>
-  <li><a href="pdf/DPi/DPi%205.x%20Recuperacion%20de%20Contadores.pdf" target="_blank" rel="noopener">DPi 5.x Recuperacion de Contadores (Abrir)</a> — <a href="pdf/DPi/DPi%205.x%20Recuperacion%20de%20Contadores.pdf" download>Descargar</a></li>
-  <li><a href="pdf/DPi/Regulacion%20de%20bombas%20Dpi.pdf" target="_blank" rel="noopener">Regulacion de bombas Dpi (Abrir)</a> — <a href="pdf/DPi/Regulacion%20de%20bombas%20Dpi.pdf" download>Descargar</a></li>
-</ul>
-<!-- AUTO:END:DPI -->
-
-  </div>
-
 </body>
 </html>
-
