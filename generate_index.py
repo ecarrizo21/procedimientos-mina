@@ -3,8 +3,8 @@ import urllib.parse
 
 PAGES = [
     # page_file, pdf_folder, start_tag, end_tag, link_prefix
-    ("dr/index.html",  "pdf/DR",  "<!-- AUTO:START:DR -->",  "<!-- AUTO:END:DR -->",  "../"),
-    ("dpi/index.html", "pdf/DPi", "<!-- AUTO:START:DPI -->", "<!-- AUTO:END:DPI -->", "../"),
+    ("dr/index.html",  "dr",  "<!-- AUTO:START:DR -->",  "<!-- AUTO:END:DR -->",  "./"),
+    ("dpi/index.html", "dpi", "<!-- AUTO:START:DPI -->", "<!-- AUTO:END:DPI -->", "./"),
 ]
 
 def sorted_pdfs(folder: str):
@@ -20,7 +20,8 @@ def build_ul(pdf_folder: str, link_prefix: str):
 
     lines = ["<ul>"]
     for fname in pdfs:
-        url = link_prefix + pdf_folder + "/" + urllib.parse.quote(fname)
+        # Link relativo dentro de la misma carpeta (dr/ o dpi/)
+        url = link_prefix + urllib.parse.quote(fname)
         label = fname.replace(".pdf", "").replace("_", " ")
         lines.append(
             f'  <li>'
