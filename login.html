@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acceso – Guía de ajustes</title>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, #1f1f1f 0%, #2b2b2b 100%);
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+    }
+    .box{
+      width:min(420px, 92vw);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 18px 44px rgba(0,0,0,0.35);
+    }
+    h1{ margin:0 0 10px; font-size:20px; letter-spacing: .5px; }
+    p{ margin:0 0 18px; opacity:.9; font-size:14px; }
+    label{ display:block; font-size:13px; opacity:.9; margin:10px 0 6px; }
+    input{
+      width:100%;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.25);
+      color:#fff;
+      outline:none;
+      box-sizing: border-box;
+    }
+    button{
+      width:100%;
+      margin-top:14px;
+      padding:10px 12px;
+      border:0;
+      border-radius:10px;
+      background:#fff;
+      color:#111;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .err{ margin-top:12px; color:#ffb3b3; font-size:13px; display:none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Acceso requerido</h1>
+    <p>Ingresá tu usuario y contraseña para ver los procedimientos.</p>
+
+    <form id="f">
+      <label>Usuario</label>
+      <input id="u" autocomplete="username" placeholder="Ej: MUÑOZRAUL" required>
+
+      <label>Contraseña</label>
+      <input id="p" type="password" autocomplete="current-password" required>
+
+      <button type="submit">Ingresar</button>
+      <div id="err" class="err">Usuario o contraseña incorrectos.</div>
+    </form>
+  </div>
+
+  <script src="./users.js"></script>
+  <script>
+    const KEY = "pm_auth_ok";
+
+    function getNext() {
+      const params = new URLSearchParams(location.search);
+      return params.get("next") || "./index.html";
+    }
+
+    document.getElementById("f").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const user = document.getElementById("u").value.trim().toUpperCase();
+      const pass = document.getElementById("p").value;
+
+      const ok = (window.PM_USERS || []).some(x =>
+        (x.user || "").toUpperCase() === user && x.pass === pass
+      );
+
+      if (!ok) {
+        document.getElementById("err").style.display = "block";
+        return;
+      }
+
+      // Opción A: queda recordado en el dispositivo
+      localStorage.setItem(KEY, "1");
+
+      // volver a donde quería entrar (dpi/dr)
+      location.replace(getNext());
+    });
+  </script>
+</body>
+</html>
